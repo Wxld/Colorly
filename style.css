@@ -1,0 +1,244 @@
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Mulish',sans-serif;
+}
+body{
+    color:rgb(51,51,51);
+}
+path,i,svg{
+    pointer-events: none;
+
+}
+
+.colors{
+    height: 80vh;
+    display: flex;
+    color: rgb(212,212,212);
+}
+.color{
+    height: 80vh;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+    overflow: hidden;
+}
+.color h2{
+    font-size: 2rem;
+    cursor: pointer;
+}
+.sliders{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0%;
+    background:rgb(255, 255, 255);
+    padding: 1rem;
+    width: 80%;
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+    
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all ease-in-out 500ms;
+    
+}
+.sliders.active{
+    opacity: 1;
+    transform: translateY(0px);
+    pointer-events: all;
+}
+.sliders button,.close-save,.close-library{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: .5rem;
+    border-top-right-radius: 1rem;
+    border: none;
+    background: white;
+    color: black;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.sliders button:hover,.close-save:hover,.close-library:hover{
+    background: red;
+    color: white;
+}
+.controls{
+    display: flex;
+    flex-direction: column;
+}
+.panel{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 20vh;
+}
+.panel button{
+    font-size: 1.1rem;
+    margin: 1rem;
+    border: none;
+    padding: 1rem 2rem;
+    background: rgb(31, 34, 27);
+    color: white;
+    border-radius: 2rem;
+}
+.panel p{
+    font-size: 1.2rem;
+}
+.library-panel,.save-panel,.generate-panel{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.adjust,.lock{
+    font-size: 2rem;
+    border: none;
+    cursor: pointer;
+    background: none;
+    margin: 2rem 0rem;
+}
+
+/*Slider stuff*/
+input[type="range"]{
+    -webkit-appearance: none;
+    margin: .5rem 0rem;
+    width: 100%;
+    border-radius: 1rem;
+    cursor: pointer;
+    position: relative ;
+}
+
+.copy-container , .save-container , .library-container{
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    background: rgba(0,0,0,0.5);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.6s ease-in-out;
+}
+
+.copy-popup,.save-popup,.library-popup{
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 1rem;
+    height: 30vh;
+    width: 30vw;
+    transition: transform 0.6s ease;
+    transform: translateY(2rem);
+    
+}
+.copy-popup h4
+{
+    font-size: 2rem;
+    padding: 1rem;
+}
+
+.copy-container.active,.save-container.active,.library-container.active{
+    opacity: 1;
+    pointer-events: all;
+}
+
+.copy-popup.active,
+.save-popup.active,
+.library-popup.active {
+    transform: translateY(0rem);
+}
+/*generate btn designing*/
+.generate,.library,.save{
+    transition: all 250ms ease-in-out;
+}
+.generate:hover,
+.library:hover,
+.save:hover {
+    opacity: 0.80;
+    background: #005cfa;
+}
+.generate:active,
+.library:active,
+.save:active {
+    transform: scale(1.1);
+}
+
+.save-name{
+    border-radius: 1rem;
+    padding: 0.25rem 1rem;
+    outline: none;
+    width:85%;
+    border: none;
+    background: #eff0f0;
+}
+
+.submit-save{
+    padding: .25rem;
+    border-radius: 1rem;
+    border: none;
+    width: 25%;
+    background: #8799a6;
+    color: white;
+}
+.save-popup h4,
+.library-popup h4{
+    padding: 1rem 1rem 0rem 1rem;
+    font-size: 1.2rem;
+}
+
+.library-popup{
+    min-width: 40vw;
+    padding: 1rem;
+    justify-content: flex-start;
+    overflow-y: scroll;
+    height: 40vh;
+}
+.custom-palette{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 1rem;
+    
+}
+.small-preview{
+    display: flex;
+    flex: 1;
+}
+
+.custom-palette h4 {
+    padding: 1rem 0rem;
+    flex: 1;
+    
+}
+
+.small-preview div{
+    height: 3rem;
+    flex: 1;
+}
+.pick-palette-btn{
+    height: 2.5rem;
+    margin-left: 2rem;
+    padding: .5rem 1rem;
+    border: none;
+    border-radius: 1.25rem;
+    background: #6347ff;
+    color: white;
+    font-size: 1.1rem;
+}
+
+
+
+
