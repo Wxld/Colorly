@@ -30,11 +30,10 @@ path,i,svg{
 .color h2{
     font-size: 2rem;
     cursor: pointer;
-    transition: font-size 250ms ease-in;
 }
 
 .color h2:hover{
-    font-size: 1.5rem;
+    text-decoration: underline;
 }
 .sliders{
     display: flex;
